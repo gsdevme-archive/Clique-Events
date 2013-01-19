@@ -1,5 +1,6 @@
 Example Output
 
+```bash
 >php ./Clique.php
 stdClass Object
 (
@@ -23,3 +24,4 @@ stdClass Object
 
     [eventId] => 364
 )
+```
