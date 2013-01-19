@@ -1,5 +1,11 @@
 Example Output
 
+@todo
+-parse the RAID Name
+-parse the Date
+-Post to twitter when the event is 72 & 24 hours away
+-Post to twitter another reminder when the event is 1 hour away
+
 ```bash
 >php ./Clique.php
 stdClass Object
