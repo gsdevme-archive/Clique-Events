@@ -70,11 +70,12 @@
 	//$event = $events->getCurrentEvent();
 	$event = $events->getEvent(360);
 
-	$tweet = $event->raid . ', ' . $event->when->format('F j, Y, g:i a') . ' GMT+' . ($event->when->getOffset() / 3600);
-	$tweet .= ' | Team: ' . (($event->team !== null) ? implode(', ', $event->team) : 'Unknown') . ' #Clique';
 
-	echo '<pre>' . print_r($tweet, true) . '</pre>';
-	echo '<pre>' . print_r(strlen($tweet), true) . '</pre>';
+
+	/*echo '<pre>' . print_r($tweet, true) . '</pre>';
+	echo '<pre>' . print_r(strlen($tweet), true) . '</pre>';*/
+
+	echo '<pre>' . print_r(Clique\TweetFormat::parse($event), true) . '</pre>';
 
 
 	//print_r($event);
