@@ -22,16 +22,16 @@
 	$events = new \Clique\Events();
 
 	$events->setPlayerDictionary(array(
-		'Vil' => 'Vilmariand',
-		'Vilmari' => 'Vilmariand',
-		'Vilmariand' => 'Vilmariand',
-		'Esbina' => 'Vilmariand',
+		'Vil' => 'Vil',
+		'Vilmari' => 'Vil',
+		'Vilmariand' => 'Vil',
+		'Esbina' => 'Vil',
 
-		'Ava' => 'Avallach',
-		'Avallach' => 'Avallach',
+		'Ava' => 'Ava',
+		'Avallach' => 'Ava',
 
-		'Chandak' => 'Chandak',
-		'Chan' => 'Chandak',
+		'Chandak' => 'Chan',
+		'Chan' => 'Chan',
 
 		'Tenac' => 'Tenac',
 
@@ -43,29 +43,39 @@
 
 		'Thefurian' => 'Thefurian',
 
-		'Milaneir' => 'Milaneir',
-		'Mila' => 'Milaneir',
-		'Mil' => 'Milaneir',
+		'Milaneir' => 'Mila',
+		'Mila' => 'Mila',
+		'Mil' => 'Mila',
 
-		'Cronin' => 'Cronin',
-		'Cron' => 'Cronin',
-		'Cro' => 'Cronin',
+		'Cronin' => 'Cro',
+		'Cron' => 'Cro',
+		'Cro' => 'Cro',
 
 		'Morb' => 'Morb',
 		'Drunna' => 'Morb',
 
-		'Maisham' => 'Maisham',
-		'Maitia' => 'Maisham',
-		'Mai' => 'Maisham',
+		'Maisham' => 'Mai',
+		'Maitia' => 'Mai',
+		'Mai' => 'Mai',
 
 		'Floggy' => 'Floggy',
 
 		'Borric' => 'Borric',
 
-		'Say' => 'Saylina',
-		'Saylina' => 'Saylina',
+		'Say' => 'Say',
+		'Saylina' => 'Say',
 
 	));
 
-	$event = $events->getCurrentEvent();
-	print_r($event);
+	//$event = $events->getCurrentEvent();
+	$event = $events->getEvent(360);
+
+	$tweet = $event->raid . ', ' . $event->when->format('F j, Y, g:i a') . ' GMT+' . ($event->when->getOffset() / 3600);
+	$tweet .= ' | Team: ' . (($event->team !== null) ? implode(', ', $event->team) : 'Unknown') . ' #Clique';
+
+	echo '<pre>' . print_r($tweet, true) . '</pre>';
+	echo '<pre>' . print_r(strlen($tweet), true) . '</pre>';
+
+
+	//print_r($event);
+	//print_r(implode(', ', $event->team));
